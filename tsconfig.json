@@ -1,0 +1,52 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "es5",
+            "es6",
+            "es2015",
+            "es2017",
+            "esnext",
+            "dom",
+            "dom.iterable",
+            "scripthost"
+        ],
+        "resolveJsonModule": true,
+        "moduleResolution": "node",
+        "allowJs": true,
+        "module": "ESNext",
+        "target": "es6",
+        "sourceMap": false,
+        "declaration": false,
+        "isolatedModules": true,
+        "noEmit": true,
+        "inlineSources": false,
+        "esModuleInterop": true,
+        "allowSyntheticDefaultImports": true,
+        "strictNullChecks": true,
+        /* Skip type checking of declaration files. */
+        "skipLibCheck": true,
+        /* Disallow inconsistently-cased references to the same file. */
+        "forceConsistentCasingInFileNames": true,
+        "noImplicitAny": true,
+        "types": [
+            "node",
+            "webdriverio",
+            "@wdio/types",
+            "@wdio/globals/types",
+            "@wdio/globals",
+            "@wdio/mocha-framework"
+        ],
+        "paths": {
+            "@pci-bridge/types/*": [
+                "./types/*"
+            ]
+        }
+    },
+    "include": [
+        "src",
+    ],
+    "exclude": [
+        "./node_modules/",
+        "./builds/"
+    ]
+}

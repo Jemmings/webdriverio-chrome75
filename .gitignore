@@ -1,0 +1,20 @@
+node_modules/
+builds/
+coverage/
+v[0-9]*/local.log
+v[0-9]*/tunnel.log
+/*.pem
+
+# WebDriverIO
+/allure-results/
+/logs/
+local.log
+wdio-safaridriver.log
+
+# Browserstack
+browserstack.err
+
+#environment
+.secrets/
+.test.env
+*.env

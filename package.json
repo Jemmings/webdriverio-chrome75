@@ -1,0 +1,22 @@
+{
+  "name": "webdriverio-chrome75",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "wdio run ./wdio.conf.ts"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@wdio/browser-runner": "^9.13.0",
+    "@wdio/cli": "^9.13.0",
+    "@wdio/mocha-framework": "^9.13.0",
+    "@wdio/spec-reporter": "^9.13.0",
+    "express": "^4.21.2",
+    "typescript": "^5.8.3"
+  }
+}
