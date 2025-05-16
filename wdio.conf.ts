@@ -51,11 +51,74 @@ export const config: WebdriverIO.Config = {
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
   // https://saucelabs.com/platform/platform-configurator
   //
-  capabilities: [{
-    // capabilities for local browser web tests
-    browserName: 'chrome'
-  }],
-
+  // Browserstack user and access key
+  user: '',
+  key: '',
+  services: [
+    ['browserstack', {
+      testObservability: true,
+      testObservabilityOptions: {
+        projectName: "Test",
+      },
+      browserstackLocal: true,
+      forceLocal: true,
+      opts: {forceLocal: true}
+    }],
+    // Used to locally link the Chrome 75 chromedriver.
+    // [
+    //   'chromedriver',
+    //   {
+    //     chromedriverCustomPath: '/Users/Downloads/chromedriver/',
+    //   }
+    // ],
+    [
+      'safaridriver',
+      {
+        diagnose: true,
+        outputDir: './logs',
+        enable: false
+      }
+    ],
+    [
+      'edgedriver',
+      {
+        outputDir: './logs'
+      }
+    ]
+  ],
+  capabilities: [
+    // Chrome 75 local capabilities.
+    // {
+    //   browserName: 'chrome',
+    //   'wdio:enforceWebDriverClassic': true,
+    //   'goog:chromeOptions': {
+    //     binary: '/Applications/Chrome-75/Google Chrome.app/Contents/MacOS/Google Chrome',
+    //     args: [
+    //       '--disable-extensions',
+    //       '--disable-sync',
+    //     ],
+    //   },
+    // },
+    // Chrome 75 browserstack.
+    {
+      browserName: 'chrome',
+      browserVersion: '75',
+      'bstack:options': {
+        os: 'Windows',
+        osVersion: '10',
+        networkLogs: true,
+        consoleLogs: 'errors',
+        buildName: 'Chrome 75 Build',
+      },
+      'wdio:enforceWebDriverClassic': true,
+      'goog:chromeOptions': {
+        args: [
+          '--disable-extensions',
+          '--disable-sync',
+        ],
+      },
+    }
+  ],
   //
   // ===================
   // Test Configurations
@@ -63,7 +126,7 @@ export const config: WebdriverIO.Config = {
   // Define all options that are relevant for the WebdriverIO instance here
   //
   // Level of logging verbosity: trace | debug | info | warn | error | silent
-  logLevel: 'error',
+  logLevel: 'info',
   //
   // Set specific log levels per logger
   // loggers:
